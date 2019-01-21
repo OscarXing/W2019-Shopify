@@ -15,7 +15,9 @@ After that you will want to run npm start folder. If all goes well, it will say 
 
 # Querying with Mongo in commandline. 
 
-Open a new terminal window,and paste in "mongo ds147681.mlab.com:47681/shopify -u TestUser -p TestUser123" (Without the double quotes) to connect to the mLab cloud database where the collection is being hosted. (If this doesn't work, navigate in terminal to where your mongodb.exe is and try again.)
+Open a new terminal window,and paste in: 
+"mongo ds147681.mlab.com:47681/shopify -u TestUser -p TestUser123" (Without the double quotes) 
+to connect to the mLab cloud database where the collection is being hosted. (If this doesn't work, navigate in terminal to where your mongodb.exe is and try again.)
 
 When typed into the command line, the following queries will display the documents
 
@@ -52,18 +54,23 @@ The associated id of the desired book should go where id is.
 
 *curl --location --request POST "localhost:8000/products/create" \
   --header "Content-Type: application/x-www-form-urlencoded" \
-  --data "title=1&price=1&inventory_count=1"*
+  --data "title=:title&price=:price&inventory_count=:inventory_count"*
+
+Fill in the title, price and inventory_count fields.
   
 # Example: 
-curl --location --request POST "localhost:8000/products/create" \
+
+*curl --location --request POST "localhost:8000/products/create" \
   --header "Content-Type: application/x-www-form-urlencoded" \
-  --data "title=:title&price=:price&inventory_count=:inventory_count"
+  --data "title=1&price=1&inventory_count=1"*
  
 # To update a book: 
 
  *curl --location --request PUT "localhost:8000/products/update/5c453a38b779565a1d5175d6" \
   --header "Content-Type: application/x-www-form-urlencoded" \
   --data "title=:title&price=:price&inventory_count=:inventory_count"*
+  
+ Here fill in the title, price and inventory_count fields. 
   
 # Example:  
 
