@@ -23,11 +23,12 @@ When typed into the command line, the following queries will display the documen
 | Shops | db.shops.find({}) | 
  
 
-# Documentation:
-https://documenter.getpostman.com/view/5390843/RWaPt6QP
 
 # Example Code:
 These sample curl commands can be put into the terminal, or alternatively just enter the websites into your browser: 
+
+localhost:8000/delete/5c453112fb6fc02d2eefd462 or 
+curl --request DELETE \ --url http://<i></i>localhost:8000/shops/delete/5c453112fb6fc02d2eefd462
 
 
 
