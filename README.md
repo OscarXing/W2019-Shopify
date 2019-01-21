@@ -1,5 +1,6 @@
 # W2019-Shopify
 Shopify Coding Problem
+:shipit: :shipit: :shipit:
 
 # API
 Practice API for Shopify's Developer Coding Problem
