@@ -27,9 +27,35 @@ When typed into the command line, the following queries will display the documen
 # Example Code:
 You can see each of these commands in action by simply pasting the following into your browser 
 
-To get a book: localhost:8000/products/read/5c453112fb6fc02d2eefd462 
+To get a book: curl --location --request GET "http://localhost:8000/products/read/:id" \
+  --header "Content-Type: application/x-www-form-urlencoded"
+ 
+The associated id of the desired book should go where id is. 
+Example: curl --location --request GET "http://localhost:8000/products/read/5c450a17fb6fc02d2eefc7b1" \
+  --header "Content-Type: application/x-www-form-urlencoded"
 
-To delete a book: localhost:8000/products/delete/5c45345cfb6fc02d2eefd51e
+To delete a book: curl --location --request DELETE "http://localhost:8000/products/delete/:id" \
+  --header "Content-Type: application/x-www-form-urlencoded"
+
+Example: curl --location --request DELETE "http://localhost:8000/products/delete/5c45345cfb6fc02d2eefd51e" \
+  --header "Content-Type: application/x-www-form-urlencoded"
+ 
+
+To create a book: curl --location --request POST "localhost:8000/products/create" \
+  --header "Content-Type: application/x-www-form-urlencoded" \
+  --data "title=1&price=1&inventory_count=1"
+Example: curl --location --request POST "localhost:8000/products/create" \
+  --header "Content-Type: application/x-www-form-urlencoded" \
+  --data "title=:title&price=:price&inventory_count=:inventory_count"
+ 
+To update a book: 
+ curl --location --request PUT "localhost:8000/products/update/5c453a38b779565a1d5175d6" \
+  --header "Content-Type: application/x-www-form-urlencoded" \
+  --data "title=:title&price=:price&inventory_count=:inventory_count"
+  
+Example:  curl --location --request PUT "localhost:8000/products/update/5c453a38b779565a1d5175d6" \
+  --header "Content-Type: application/x-www-form-urlencoded" \
+  --data "title=yeet&price=1&inventory_count=5"
 
 
 
