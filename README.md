@@ -6,15 +6,15 @@ Practice API for Shopify's Developer Coding Problem
 
 
 # Installation 
-After cloning into any file, there will be another folder in there labeled API. 
+After cloning into any file, take note of the directory where it's cloned and open commandline/terminal. 
 
-In your commandline navigate to the API directory, you will want to run npm install, to get the exact module versions that I used, in case there is an error with different ones.
+In your terminal navigate to the directory, you will want to run npm install, to get the exact module versions that I used, in case there is an error with different ones.
 
-After that you will want to run npm start in the api folder. If all goes well, it will say "Hello There, We are live at port: 8000". Then open http://localhost:8000
+After that you will want to run npm start folder. If all goes well, it will say "Hello There, We are live at port: 8000". Then open http://localhost:8000
 
 # Querying with Mongo in commandline. 
 
-Open a new terminal,and paste in "mongo ds147681.mlab.com:47681/shopify -u TestUser -p TestUser123" (Without the double quotes) to connect to the mLab database where the collection is being hosted. (If this doesn't work, navigate in terminal to where your mongodb.exe is and try again.)
+Open a new terminal window,and paste in "mongo ds147681.mlab.com:47681/shopify -u TestUser -p TestUser123" (Without the double quotes) to connect to the mLab cloud database where the collection is being hosted. (If this doesn't work, navigate in terminal to where your mongodb.exe is and try again.)
 
 When typed into the command line, the following queries will display the documents
 
@@ -22,10 +22,12 @@ When typed into the command line, the following queries will display the documen
 | ------------- | ------------- | 
 | Shops | db.shops.find({}) | 
  
+# Postman Documentation:
 
+https://documenter.getpostman.com/view/5390843/RzteTD16
 
 # Example Code:
-You can see each of these commands in action by simply pasting the following into your browser 
+You can see each of these commands in action by simply pasting the following into your a new terminal window.
 
 To get a book: curl --location --request GET "localhost:8000/products/read/:id" 
 The associated id of the desired book should go where id is. 
@@ -35,9 +37,8 @@ Example: curl --location --request GET "localhost:8000/products/read/5c450a17fb6
 To delete a book: curl --location --request DELETE "localhost:8000/products/delete/:id" \
   --header "Content-Type: application/x-www-form-urlencoded"
 
-Example: curl --location --request DELETE "http://localhost:8000/products/delete/5c45345cfb6fc02d2eefd51e" \
+Example: curl --location --request DELETE "localhost:8000/products/delete/5c45345cfb6fc02d2eefd51e" \
   --header "Content-Type: application/x-www-form-urlencoded"
- 
 
 To create a book: curl --location --request POST "localhost:8000/products/create" \
   --header "Content-Type: application/x-www-form-urlencoded" \
@@ -54,6 +55,15 @@ To update a book:
 Example:  curl --location --request PUT "localhost:8000/products/update/5c453a38b779565a1d5175d6" \
   --header "Content-Type: application/x-www-form-urlencoded" \
   --data "title=yeet&price=1&inventory_count=5"
+  
+To Buy a book: curl --location --request GET "localhost:8000/products/buy/:id" \
+  --data ""
+
+Example: 
+curl --location --request GET "localhost:8000/products/buy/5c452bc7fb6fc02d2eefd234" \
+  --data ""
+
+
 
 
 
