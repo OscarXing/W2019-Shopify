@@ -25,10 +25,11 @@ When typed into the command line, the following queries will display the documen
 
 
 # Example Code:
-These sample curl commands can be put into the terminal, or alternatively just enter the websites into your browser: 
+You can see each of these commands in action by simply pasting the following into your browser 
 
-localhost:8000/delete/5c453112fb6fc02d2eefd462 or 
-curl --request DELETE \ --url http://<i></i>localhost:8000/shops/delete/5c453112fb6fc02d2eefd462
+To get a book: localhost:8000/products/read/5c453112fb6fc02d2eefd462 
+
+To delete a book: localhost:8000/products/delete/5c45345cfb6fc02d2eefd51e
 
 
 
