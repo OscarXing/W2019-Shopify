@@ -27,14 +27,12 @@ When typed into the command line, the following queries will display the documen
 # Example Code:
 You can see each of these commands in action by simply pasting the following into your browser 
 
-To get a book: curl --location --request GET "http://localhost:8000/products/read/:id" \
-  --header "Content-Type: application/x-www-form-urlencoded"
- 
+To get a book: curl --location --request GET "localhost:8000/products/read/:id" 
 The associated id of the desired book should go where id is. 
-Example: curl --location --request GET "http://localhost:8000/products/read/5c450a17fb6fc02d2eefc7b1" \
-  --header "Content-Type: application/x-www-form-urlencoded"
 
-To delete a book: curl --location --request DELETE "http://localhost:8000/products/delete/:id" \
+Example: curl --location --request GET "localhost:8000/products/read/5c450a17fb6fc02d2eefc7b1" 
+
+To delete a book: curl --location --request DELETE "localhost:8000/products/delete/:id" \
   --header "Content-Type: application/x-www-form-urlencoded"
 
 Example: curl --location --request DELETE "http://localhost:8000/products/delete/5c45345cfb6fc02d2eefd51e" \
