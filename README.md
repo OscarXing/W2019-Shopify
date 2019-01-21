@@ -43,8 +43,9 @@ The associated id of the desired book should go where id is.
   
 The associated id of the desired book should go where id is.
 
-# Example: curl --location --request DELETE "localhost:8000/products/delete/5c45345cfb6fc02d2eefd51e" \
-  --header "Content-Type: application/x-www-form-urlencoded"
+# Example: 
+*curl --location --request DELETE "localhost:8000/products/delete/5c45345cfb6fc02d2eefd51e" \
+  --header "Content-Type: application/x-www-form-urlencoded"*
 
 # To create a book: 
 
