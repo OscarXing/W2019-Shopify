@@ -63,16 +63,21 @@ curl --location --request POST "localhost:8000/products/create" \
   --header "Content-Type: application/x-www-form-urlencoded" \
   --data "title=:title&price=:price&inventory_count=:inventory_count"
   
-#Example:  
+# Example:  
+
 *curl --location --request PUT "localhost:8000/products/update/5c453a38b779565a1d5175d6" \
   --header "Content-Type: application/x-www-form-urlencoded" \
   --data "title=yeet&price=1&inventory_count=5"*
   
 # To Buy a book: 
+
 *curl --location --request GET "localhost:8000/products/buy/:id" \
   --data ""*
 
+The  associated id of the book should go where id is.
+
 # Example: 
+
 *curl --location --request GET "localhost:8000/products/buy/5c452bc7fb6fc02d2eefd234" \
   --data ""*
 
