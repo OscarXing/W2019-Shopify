@@ -29,39 +29,52 @@ https://documenter.getpostman.com/view/5390843/RzteTD16
 # Example Code:
 You can see each of these commands in action by simply pasting the following into your a new terminal window.
 
-To get a book: curl --location --request GET "localhost:8000/products/read/:id" 
+# To get a book: 
+*curl --location --request GET "localhost:8000/products/read/:id"* 
+
 The associated id of the desired book should go where id is. 
 
-Example: curl --location --request GET "localhost:8000/products/read/5c450a17fb6fc02d2eefc7b1" 
+# Example: 
+*curl --location --request GET "localhost:8000/products/read/5c450a17fb6fc02d2eefc7b1" *
 
-To delete a book: curl --location --request DELETE "localhost:8000/products/delete/:id" \
+# To delete a book: 
+*curl --location --request DELETE "localhost:8000/products/delete/:id" \
+  --header "Content-Type: application/x-www-form-urlencoded"*
+  
+The associated id of the desired book should go where id is.
+
+# Example: curl --location --request DELETE "localhost:8000/products/delete/5c45345cfb6fc02d2eefd51e" \
   --header "Content-Type: application/x-www-form-urlencoded"
 
-Example: curl --location --request DELETE "localhost:8000/products/delete/5c45345cfb6fc02d2eefd51e" \
-  --header "Content-Type: application/x-www-form-urlencoded"
+#To create a book: 
 
-To create a book: curl --location --request POST "localhost:8000/products/create" \
+curl --location --request POST "localhost:8000/products/create" \
   --header "Content-Type: application/x-www-form-urlencoded" \
   --data "title=1&price=1&inventory_count=1"
-Example: curl --location --request POST "localhost:8000/products/create" \
+  
+# Example: 
+curl --location --request POST "localhost:8000/products/create" \
   --header "Content-Type: application/x-www-form-urlencoded" \
   --data "title=:title&price=:price&inventory_count=:inventory_count"
  
-To update a book: 
+# To update a book: 
+
  curl --location --request PUT "localhost:8000/products/update/5c453a38b779565a1d5175d6" \
   --header "Content-Type: application/x-www-form-urlencoded" \
   --data "title=:title&price=:price&inventory_count=:inventory_count"
   
-Example:  curl --location --request PUT "localhost:8000/products/update/5c453a38b779565a1d5175d6" \
+#Example:  
+*curl --location --request PUT "localhost:8000/products/update/5c453a38b779565a1d5175d6" \
   --header "Content-Type: application/x-www-form-urlencoded" \
-  --data "title=yeet&price=1&inventory_count=5"
+  --data "title=yeet&price=1&inventory_count=5"*
   
-To Buy a book: curl --location --request GET "localhost:8000/products/buy/:id" \
-  --data ""
+# To Buy a book: 
+*curl --location --request GET "localhost:8000/products/buy/:id" \
+  --data ""*
 
-Example: 
-curl --location --request GET "localhost:8000/products/buy/5c452bc7fb6fc02d2eefd234" \
-  --data ""
+# Example: 
+*curl --location --request GET "localhost:8000/products/buy/5c452bc7fb6fc02d2eefd234" \
+  --data ""*
 
 
 
