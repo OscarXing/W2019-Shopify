@@ -88,24 +88,31 @@ module.exports = function(app, db) {
     }
     )})
   
-    // Here is the purchase function, it takes in a product id and then lowers 
-    // the inventory_count of the product by 1.
+  // Here is the purchase function, it takes in a product id and then lowers 
+  // the inventory_count of the product by 1.
 
-    app.put("/products/update/:id", (req, res) => {
-      const id = req.params.id;
-      const details = { _id: new ObjectID(id) };
-      const products = {
-        title: req.body.title,
-        price: req.body.price,
-        inventory_count: req.body.inventory_count
-      };
-      db.collection("products").update(details, products, (err, result) => {
-        if (err) {
-          res.send({ error: "An error has occured" });
-        } else {
-          res.send(products);
-          console.log(products);
-        }
-      });
-    });
+  app.get("/products/buy/:id", (req, res) => {
+    const id = req.params.id;
+    const details = { _id: new ObjectID(id) };
+    db.collection("products").findOne(details, (err, item) => {
+      
+    // We store the fields from our initial query in these variables
+    x = item.title;
+    y = item.price;
+    z = item.inventory_count - 1;
+    
+    // We now define a new product thats the same as the old one, except 
+    // the inventory_count field has been reduced by 1
+
+    const products = {
+      title: x,
+      price: y,
+      inventory_count: z
+    }
+    db.collection("products").update(details, products, (err));
+    console.log(item);
+    res.send(item);
+  });
+  });
+
 };
