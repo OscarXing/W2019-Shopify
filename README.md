@@ -87,4 +87,4 @@ The  associated id of the book should go where id is.
 
 
 
-# Thanks for reading
+# :shipit: Thanks for reading :shipit:
